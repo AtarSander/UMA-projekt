@@ -45,7 +45,7 @@ class CartTree:
     def split_categorical(self, dataset, column):
         unique_values = list(dataset[column].unique())
         combinations = []
-        splits = []
+        splits = [column]
 
         def backtrack(value, other_values, split):
             if len(other_values) == 1:
@@ -69,8 +69,43 @@ class CartTree:
         return splits
 
     def calculate_gini(self, dataset, split, target):
-        C = len(dataset[target].unique())
+        target_values_left = {value: 0 for value in dataset[target].unique()}
+        target_values_right = dict(target_values_left)
+        N_left = 0
+        N_right = 0
         if isinstance(split, list):
-            pass
+            label = split[0]
+            group1 = split[1]
+            group2 = split[2]
+            for row in dataset.iterrows():
+                for category in group1:
+                    if row[label] == category:
+                        N_left += 1
+                        target_values_left[row[target]] += 1
+                for category in group2:
+                    if row[label] == category:
+                        N_right += 1
+                        target_values_right[row[target]] += 1
         else:
-            pass
+            label = split[0]
+            split_point = split[1]
+            for row in dataset.iterrows():
+                if row[label] > split_point:
+                    N_left += 1
+                    target_values_left[row[target]] += 1
+                else:
+                    N_right += 1
+                    target_values_right[row[target]] += 1
+        gini_left = self.gini_split(target_values_left)
+        gini_right = self.gini_split(target_values_right)
+        G_split = (N_left / len(dataset)) * gini_left + (
+            N_right / len(dataset)
+        ) * gini_right
+
+        return G_split
+
+    def gini_split(self, probabilities):
+        G = 1
+        for value in probabilities.values():
+            G -= (value / len(probabilities)) ** 2
+        return G
