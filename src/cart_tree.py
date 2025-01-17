@@ -1,5 +1,6 @@
 from itertools import combinations
 from tree_node import TreeNode
+from collections import Counter
 import pandas as pd
 import random
 import graphviz
@@ -131,44 +132,33 @@ class CartTree:
         return splits
 
     def calculate_gini(self, dataset, split, target):
-        target_values_left = {value: 0 for value in dataset[target].unique()}
-        target_values_right = dict(target_values_left)
-        N_left = 0
-        N_right = 0
         if isinstance(split, list):
             feature = split[0]
             group1 = split[1][0]
-            group2 = split[1][1]
-            for _, row in dataset.iterrows():
-                for category in group1:
-                    if row[feature] == category:
-                        N_left += 1
-                        target_values_left[row[target]] += 1
-                for category in group2:
-                    if row[feature] == category:
-                        N_right += 1
-                        target_values_right[row[target]] += 1
+            left_mask = dataset[feature].isin(group1)
+            right_mask = ~left_mask
         else:
             feature = split[0]
             split_point = split[1]
-            for _, row in dataset.iterrows():
-                if row[feature] < split_point:
-                    N_left += 1
-                    target_values_left[row[target]] += 1
-                else:
-                    N_right += 1
-                    target_values_right[row[target]] += 1
+            left_mask = dataset[feature] < split_point
+            right_mask = ~left_mask
 
-        gini_left = self.gini_split(target_values_left, N_left)
-        gini_right = self.gini_split(target_values_right, N_right)
+        left_targets = dataset.loc[left_mask, target]
+        right_targets = dataset.loc[right_mask, target]
+        left_counts = Counter(left_targets)
+        right_counts = Counter(right_targets)
+        N_left = sum(left_counts.values())
+        N_right = sum(right_counts.values())
+
+        gini_left = self.gini_split(left_counts.values(), N_left)
+        gini_right = self.gini_split(right_counts.values(), N_right)
         G_split = (N_left / len(dataset)) * gini_left + (
             N_right / len(dataset)
         ) * gini_right
 
         return G_split
 
-    def gini_split(self, probabilities, count):
+    def gini_split(self, counts, total):
         G = 1
-        for value in probabilities.values():
-            G -= (value / count) ** 2
-        return G
+        probabilities = [value / total for value in counts]
+        return G - sum(p ** 2 for p in probabilities)
