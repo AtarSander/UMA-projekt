@@ -26,7 +26,7 @@ class CartTree:
                 add_nodes_edges(node.right)
 
         add_nodes_edges(root)
-        dot.render('cart_tree', view=True, format='png')
+        dot.render('cart_tree', view=False, format='png')
 
     def predict(self, sample):
         return self.predict_process(sample, self.root)
@@ -37,7 +37,7 @@ class CartTree:
         if isinstance(node.condition, tuple):
             if sample[node.feature] in node.condition[0]:
                 return self.predict_process(sample, node.left)
-            return self.predict_process(sample, node.left)
+            return self.predict_process(sample, node.right)
         if sample[node.feature] < node.condition:
             return self.predict_process(sample, node.left)
         return self.predict_process(sample, node.right)
@@ -89,7 +89,7 @@ class CartTree:
         tournament_pair = random.choices(split_points, k=2)
         gini_index_1 = self.calculate_gini(dataset, tournament_pair[0], target)
         gini_index_2 = self.calculate_gini(dataset, tournament_pair[1], target)
-        if gini_index_1 > gini_index_2:
+        if gini_index_1 < gini_index_2:
             return tournament_pair[0]
         return tournament_pair[1]
 
