@@ -9,3 +9,7 @@ class TreeNode:
         self.left = left
         self.right = right
         self.label = label
+    def __str__(self):
+        if self.feature is None:
+            return f"({self.label})"
+        return f"({self.feature}, {self.condition})"

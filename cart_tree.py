@@ -2,6 +2,7 @@ from itertools import combinations
 from tree_node import TreeNode
 import pandas as pd
 import random
+import graphviz
 
 
 class CartTree:
@@ -9,12 +10,44 @@ class CartTree:
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
 
+    def visualize_tree(self):
+        dot = graphviz.Digraph()
+        root = self.root
+        dot.node(str(root))
+
+        def add_nodes_edges(node):
+            if node.left:
+                dot.node(str(node.left))
+                dot.edge(str(node), str(node.left))
+                add_nodes_edges(node.left)
+            if node.right:
+                dot.node(str(node.right))
+                dot.edge(str(node), str(node.right))
+                add_nodes_edges(node.right)
+
+        add_nodes_edges(root)
+        dot.render('cart_tree', view=True, format='png')
+
+    def predict(self, sample):
+        return self.predict_process(sample, self.root)
+
+    def predict_process(self, sample, node):
+        if node.feature is None:
+            return node.label
+        if isinstance(node.condition, tuple):
+            if sample[node.feature] in node.condition[0]:
+                return self.predict_process(sample, node.left)
+            return self.predict_process(sample, node.left)
+        if sample[node.feature] < node.condition:
+            return self.predict_process(sample, node.left)
+        return self.predict_process(sample, node.right)
+
     def build_tree(self,dataset, target):
         self.root = self.build_process(dataset, 0, target)
 
     def build_process(self, dataset, current_depth, target):
         if (
-            len(dataset.index) < self.min_samples_split
+            len(dataset) < self.min_samples_split
             or len(dataset[target].unique()) == 1
             or current_depth > self.max_depth
         ):
@@ -26,18 +59,15 @@ class CartTree:
         right_branch = self.build_process(right_dataset, current_depth + 1, target)
         return TreeNode(split_condition, left_branch, right_branch)
 
-
     def make_leaf(self, dataset, target):
         majority_class = dataset[target].mode()[0]
         return TreeNode(None, None, None, majority_class)
-
 
     def split_tree(self, dataset, split_condition):
         if isinstance(split_condition, list):
             return self.split_tree_categorical(dataset, split_condition)
         else:
             return self.split_tree_numerical(dataset, split_condition)
-
 
     def split_tree_categorical(self, dataset, split_condition):
         feature = split_condition[0]
@@ -47,14 +77,12 @@ class CartTree:
         right_dataset = dataset[dataset[feature].isin(group2)]
         return left_dataset, right_dataset
 
-
     def split_tree_numerical(self, dataset, split_condition):
         feature = split_condition[0]
         split_point = split_condition[1]
         left_dataset = dataset[dataset[feature] < split_point]
         right_dataset = dataset[dataset[feature] >= split_point]
         return left_dataset, right_dataset
-
 
     def choose_best_split(self, dataset, target):
         split_points = self.make_splits(dataset, target)
@@ -65,7 +93,6 @@ class CartTree:
             return tournament_pair[0]
         return tournament_pair[1]
 
-
     def make_splits(self, dataset, target):
         split_points = []
         for column in dataset:
@@ -74,12 +101,13 @@ class CartTree:
             data_type = dataset[column].dtype
             if pd.api.types.is_numeric_dtype(data_type):
                 split_point = self.split_numerical(dataset, column)
-                split_points.extend(split_point)
+                if len(split_point) > 1:
+                    split_points.extend(split_point)
             else:
                 split_point = self.split_categorical(dataset, column)
-                split_points.append(split_point)
+                if len(split_point) > 1:
+                    split_points.append(split_point)
         return split_points
-
 
     def split_numerical(self, dataset, column):
         unique_values_sorted = sorted(list(dataset[column].unique()))
