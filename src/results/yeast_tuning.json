@@ -1,0 +1,212 @@
+[
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5795778111828709,
+    "accuracy": 0.5959595959595959,
+    "precision": 0.6068860842402712,
+    "recall": 0.5959595959595959,
+    "train_time": 11.027421236038208
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5936601122929012,
+    "accuracy": 0.6060606060606061,
+    "precision": 0.6432300918602288,
+    "recall": 0.6060606060606061,
+    "train_time": 20.977397203445435
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.598834570636332,
+    "accuracy": 0.6127946127946128,
+    "precision": 0.6447726638894212,
+    "recall": 0.6127946127946128,
+    "train_time": 29.489498138427734
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 200,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5896301310514854,
+    "accuracy": 0.6026936026936027,
+    "precision": 0.6324217469592769,
+    "recall": 0.6026936026936027,
+    "train_time": 38.6929669380188
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 5,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.441357323968778,
+    "accuracy": 0.47474747474747475,
+    "precision": 0.5708819271621203,
+    "recall": 0.47474747474747475,
+    "train_time": 5.72970724105835
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5799765388332605,
+    "accuracy": 0.5925925925925926,
+    "precision": 0.6358905922923582,
+    "recall": 0.5925925925925926,
+    "train_time": 29.64815616607666
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6093580385869248,
+    "accuracy": 0.6161616161616161,
+    "precision": 0.6212159958202217,
+    "recall": 0.6161616161616161,
+    "train_time": 65.6077229976654
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 30,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5772892590205124,
+    "accuracy": 0.5858585858585859,
+    "precision": 0.5878023274897346,
+    "recall": 0.5858585858585859,
+    "train_time": 68.47563290596008
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.606602001277092,
+    "accuracy": 0.6127946127946128,
+    "precision": 0.621121029123666,
+    "recall": 0.6127946127946128,
+    "train_time": 68.91518831253052
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 5,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6097308569051652,
+    "accuracy": 0.6195286195286195,
+    "precision": 0.6359785752739683,
+    "recall": 0.6195286195286195,
+    "train_time": 51.835665702819824
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 10,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5809714095008297,
+    "accuracy": 0.5925925925925926,
+    "precision": 0.6124014282694565,
+    "recall": 0.5925925925925926,
+    "train_time": 34.16565012931824
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 20,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5994134444570669,
+    "accuracy": 0.6094276094276094,
+    "precision": 0.618101462128691,
+    "recall": 0.6094276094276094,
+    "train_time": 19.67499303817749
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 5,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6039456917396205,
+    "accuracy": 0.6127946127946128,
+    "precision": 0.6224172479025448,
+    "recall": 0.6127946127946128,
+    "train_time": 49.86043167114258
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 5,
+      "max_features": "log2"
+    },
+    "f1": 0.5910189745123885,
+    "accuracy": 0.6060606060606061,
+    "precision": 0.6029479539043558,
+    "recall": 0.6060606060606061,
+    "train_time": 60.924620151519775
+  },
+  {
+    "dataset": "yeast",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 20,
+      "min_samples_split": 5,
+      "max_features": 0.3
+    },
+    "f1": 0.47431006360311073,
+    "accuracy": 0.4983164983164983,
+    "precision": 0.6217750609835775,
+    "recall": 0.4983164983164983,
+    "train_time": 12.276967763900757
+  }
+]

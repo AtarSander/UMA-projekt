@@ -1,11 +1,14 @@
+# Autor: Aleksander Szymczyk, Andrzej Tokajuk
+# Data utworzenia: 26.01.2025
+
 from cart_tree import CartTree
 
 
 class RandomForest:
-    def __init__(self, n_estimators, max_tree_depth, min_tree_samples_split, max_features='sqrt'):
+    def __init__(self, n_estimators, max_depth, min_samples_split, max_features='sqrt'):
         self.n_estimators = n_estimators
-        self.max_depth = max_tree_depth
-        self.min_samples_split = min_tree_samples_split
+        self.max_depth = max_depth
+        self.min_samples_split = min_samples_split
         self.max_features = max_features
 
     def predict(self, sample):

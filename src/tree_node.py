@@ -1,3 +1,6 @@
+# Autor: Aleksander Szymczyk, Andrzej Tokajuk
+# Data utworzenia: 26.01.2025
+
 class TreeNode:
     def __init__(self, split_condition, left, right, label=None):
         if split_condition is None:
@@ -9,6 +12,7 @@ class TreeNode:
         self.left = left
         self.right = right
         self.label = label
+
     def __str__(self):
         if self.feature is None:
             return f"({self.label})"

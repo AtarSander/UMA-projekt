@@ -1,0 +1,212 @@
+[
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.7870155341441636,
+    "accuracy": 0.8242644452321871,
+    "precision": 0.8274100383961356,
+    "recall": 0.8242644452321871,
+    "train_time": 48.270315647125244
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.7818263908990648,
+    "accuracy": 0.8229351293867423,
+    "precision": 0.8326441717947868,
+    "recall": 0.8229351293867423,
+    "train_time": 92.58628225326538
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.7807874599871171,
+    "accuracy": 0.8224034030485643,
+    "precision": 0.8324420618841272,
+    "recall": 0.8224034030485643,
+    "train_time": 136.9931263923645
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 200,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.7835896588212441,
+    "accuracy": 0.8239985820630982,
+    "precision": 0.8338122584812143,
+    "recall": 0.8239985820630982,
+    "train_time": 175.47381258010864
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 5,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.693905681847795,
+    "accuracy": 0.782080822403403,
+    "precision": 0.8249412995515766,
+    "recall": 0.782080822403403,
+    "train_time": 8.112713098526001
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.7781769478488422,
+    "accuracy": 0.8200992555831266,
+    "precision": 0.8268174828350677,
+    "recall": 0.8200992555831266,
+    "train_time": 47.0123348236084
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.8219233552208143,
+    "accuracy": 0.8422545196738745,
+    "precision": 0.8362708750286351,
+    "recall": 0.8422545196738745,
+    "train_time": 373.99325609207153
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.8310790627455236,
+    "accuracy": 0.848014888337469,
+    "precision": 0.841602425167278,
+    "recall": 0.848014888337469,
+    "train_time": 648.2721827030182
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.836242935669616,
+    "accuracy": 0.8507621410847217,
+    "precision": 0.8435401131044444,
+    "recall": 0.8507621410847217,
+    "train_time": 704.9995756149292
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 5,
+      "max_features": "sqrt"
+    },
+    "f1": 0.8230996330631297,
+    "accuracy": 0.8442041829138603,
+    "precision": 0.8402419596528272,
+    "recall": 0.8442041829138603,
+    "train_time": 601.7888464927673
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 10,
+      "max_features": "sqrt"
+    },
+    "f1": 0.8283530533758469,
+    "accuracy": 0.8461538461538461,
+    "precision": 0.8396797867019627,
+    "recall": 0.8461538461538461,
+    "train_time": 443.4315092563629
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 20,
+      "max_features": "sqrt"
+    },
+    "f1": 0.8279622297318923,
+    "accuracy": 0.8452676355902162,
+    "precision": 0.8379764366855025,
+    "recall": 0.8452676355902162,
+    "train_time": 309.5116481781006
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.8337521036060126,
+    "accuracy": 0.8482807515065579,
+    "precision": 0.8402282592136397,
+    "recall": 0.8482807515065579,
+    "train_time": 656.8172695636749
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 2,
+      "max_features": "log2"
+    },
+    "f1": 0.8284550579692337,
+    "accuracy": 0.8468628146047501,
+    "precision": 0.8413162407350929,
+    "recall": 0.8468628146047501,
+    "train_time": 575.9750471115112
+  },
+  {
+    "dataset": "rain_in_australia",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 2,
+      "max_features": 0.3
+    },
+    "f1": 0.6767760233748269,
+    "accuracy": 0.7748138957816377,
+    "precision": 0.8255361624972533,
+    "recall": 0.7748138957816377,
+    "train_time": 18.822740077972412
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "datasets": {
+    "rain_in_australia": {
+      "path": "../datasets/rain-in-australia/weatherAUS.csv",
+      "target": "RainTomorrow",
+      "csv_params": {
+        "delimiter": ",",
+        "header": true,
+        "names": null
+      },
+      "drop_columns": [
+        "Date",
+        "Location"
+      ]
+    },
+    "yeast": {
+      "path": "../datasets/yeast/yeast.data",
+      "target": "class",
+      "csv_params": {
+        "delim_whitespace": true,
+        "header": false,
+        "names": [
+          "sequence_name",
+          "mcg",
+          "gvh",
+          "alm",
+          "mit",
+          "erl",
+          "pox",
+          "vac",
+          "nuc",
+          "class"
+        ]
+      },
+      "drop_columns": [
+        "sequence_name"
+      ]
+    },
+    "online_news_popularity": {
+      "path": "../datasets/online-news-popularity/OnlineNewsPopularity.csv",
+      "target": "popular",
+      "csv_params": {
+        "delimiter": ", ",
+        "header": true,
+        "names": null
+      },
+      "drop_columns": [
+        "url",
+        "timedelta",
+        "shares"
+      ]
+    }
+  }
+}

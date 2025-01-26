@@ -1,0 +1,212 @@
+[
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6308587700669257,
+    "accuracy": 0.639298776642704,
+    "precision": 0.6435387378034115,
+    "recall": 0.639298776642704,
+    "train_time": 72.86752605438232
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 100,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6270016737004304,
+    "accuracy": 0.6387942994072392,
+    "precision": 0.6465675207599062,
+    "recall": 0.6387942994072392,
+    "train_time": 142.94853830337524
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 150,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6286238346121189,
+    "accuracy": 0.6396771345693025,
+    "precision": 0.6467470323823286,
+    "recall": 0.6396771345693025,
+    "train_time": 205.81295895576477
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 200,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6248299373347524,
+    "accuracy": 0.6374069870097112,
+    "precision": 0.6458505205505246,
+    "recall": 0.6374069870097112,
+    "train_time": 267.6303312778473
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 5,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.5497977610534666,
+    "accuracy": 0.599571194349855,
+    "precision": 0.6409740223015263,
+    "recall": 0.599571194349855,
+    "train_time": 11.543944597244263
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6275466799144603,
+    "accuracy": 0.6376592256274436,
+    "precision": 0.6434169063930018,
+    "recall": 0.6376592256274436,
+    "train_time": 69.48233246803284
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6502099064215798,
+    "accuracy": 0.6511539916761256,
+    "precision": 0.6505454270356149,
+    "recall": 0.6511539916761256,
+    "train_time": 639.1094295978546
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 30,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6425820160662986,
+    "accuracy": 0.6439651910707529,
+    "precision": 0.6433229413631283,
+    "recall": 0.6439651910707529,
+    "train_time": 840.0904357433319
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 2,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6460173810148693,
+    "accuracy": 0.6472442931012738,
+    "precision": 0.6466169887655872,
+    "recall": 0.6472442931012738,
+    "train_time": 674.7586677074432
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 5,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6390534966696004,
+    "accuracy": 0.6387942994072392,
+    "precision": 0.6399275225489878,
+    "recall": 0.6387942994072392,
+    "train_time": 553.4514720439911
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 10,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6515921232901599,
+    "accuracy": 0.6516584689115904,
+    "precision": 0.6515397922303859,
+    "recall": 0.6516584689115904,
+    "train_time": 395.4642369747162
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 20,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6486843862694275,
+    "accuracy": 0.6497666792785975,
+    "precision": 0.6491504097244584,
+    "recall": 0.6497666792785975,
+    "train_time": 249.78135585784912
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 10,
+      "max_features": "sqrt"
+    },
+    "f1": 0.6416350716612612,
+    "accuracy": 0.6416950435111616,
+    "precision": 0.6415858970381433,
+    "recall": 0.6416950435111616,
+    "train_time": 366.751259803772
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 10,
+      "max_features": "log2"
+    },
+    "f1": 0.6475344185969444,
+    "accuracy": 0.6477487703367385,
+    "precision": 0.6474360462807006,
+    "recall": 0.6477487703367385,
+    "train_time": 323.65319776535034
+  },
+  {
+    "dataset": "online_news_popularity",
+    "params": {
+      "n_estimators": 50,
+      "max_depth": 20,
+      "min_samples_split": 10,
+      "max_features": 0.3
+    },
+    "f1": 0.6508235456155747,
+    "accuracy": 0.6548114516332451,
+    "precision": 0.6559792516232191,
+    "recall": 0.6548114516332451,
+    "train_time": 120.77363181114197
+  }
+]

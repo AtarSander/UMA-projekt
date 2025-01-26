@@ -1,3 +1,6 @@
+# Autor: Aleksander Szymczyk, Andrzej Tokajuk
+# Data utworzenia: 26.01.2025
+
 import random
 from collections import Counter
 
