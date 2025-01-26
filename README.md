@@ -17,5 +17,7 @@ W folderze `src` umieszczono wszystkie pliki zawierające kod źródłowy projek
 - W pliku `run_experiments.py` - cały pipeline przytowujący dane oraz przeprowadzający eksperymenty.
 - W pliku `datasets_config.json` - konfiguracja ścieżek do plików oraz parametrów ładowania zbiorów danych.
 - W plikach `analyze_results.py` oraz `analyze_tuning_results.py` - funkcje pomocnicze do generowania wykresów na podstawie wyników eksperymentów.
+
 W podfolderze `results` przechowywane są pliki `.json` z wynikami przeprowadzonych eksperymentów dla poszczególnych zbiorów danych.
+
 W podfolderze `plots` znajdują się wykresy stworzone do analizy wyników eksperymentów.
