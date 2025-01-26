@@ -1,3 +1,6 @@
+# Autor: Aleksander Szymczyk, Andrzej Tokajuk
+# Data utworzenia: 26.01.2025
+
 from cart_tree import CartTree
 from random_forest import RandomForest
 
@@ -40,7 +43,7 @@ y = df["poisonous"]
 
 train_x, test_x, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=42)
 random_forest = RandomForest(
-    n_estimators=10, max_tree_depth=40, min_tree_samples_split=30
+    n_estimators=10, max_depth=40, min_samples_split=30
 )
 train = pd.concat([train_x, train_y], axis=1)
 random_forest.build_forest(train, "poisonous")
@@ -67,7 +70,7 @@ baseline_rf = Baseline()
 categorical_columns = X.columns.tolist()
 baseline_rf.setup_preprocessor([], categorical_columns)
 
-baseline_rf.fit(train_x, train_y, n_estimators=10)
+baseline_rf.fit(train_x, train_y, params={"n_estimators":10, "random_state":42})
 
 y_pred = baseline_rf.predict(test_x)
 
