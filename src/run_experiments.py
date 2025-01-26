@@ -9,11 +9,11 @@ import numpy as np
 import pandas as pd
 from joblib import Parallel, delayed
 from sklearn.compose import ColumnTransformer
-from baseline import Baseline
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 
+from baseline import Baseline
 from random_forest import RandomForest
 
 with open("datasets_config.json", "r") as f:
@@ -27,7 +27,7 @@ PARAM_GRID = {
 }
 
 N_TRIALS = 25
-OUTPUT_DIR = "results"
+OUTPUT_DIR = "results_v2"
 
 def preprocess_data(X, y):
     categorical_cols = X.select_dtypes(include=['object', 'category']).columns.tolist()
@@ -82,11 +82,13 @@ def evaluate_model(model, X_test, y_test, is_custom=True):
         preds = [model.predict(row) for _, row in X_test.iterrows()]
     else:
         preds = model.predict(X_test)
+    cm = confusion_matrix(y_test, preds).tolist()
     return {
         "accuracy": accuracy_score(y_test, preds),
         "f1": f1_score(y_test, preds, average='weighted'),
         "precision": precision_score(y_test, preds, average='weighted'),
         "recall": recall_score(y_test, preds, average='weighted'),
+        "confusion_matrix": cm
     }
 
 def run_trial(params, X_train, y_train, X_eval, y_eval, evaluate_baseline=False):
@@ -96,6 +98,7 @@ def run_trial(params, X_train, y_train, X_eval, y_eval, evaluate_baseline=False)
     custom_rf.build_forest(train_data, y_train.name)
     train_time = time.time() - start_train
     custom_metrics = evaluate_model(custom_rf, X_eval, y_eval)
+    custom_train_metrics = evaluate_model(custom_rf, X_train, y_train)
 
     baseline_metrics = {}
     if evaluate_baseline:
@@ -113,6 +116,7 @@ def run_trial(params, X_train, y_train, X_eval, y_eval, evaluate_baseline=False)
 
     return {
         "custom": {**custom_metrics, "train_time": train_time},
+        "custom_train": custom_train_metrics,
         "baseline": baseline_metrics
     }
 
@@ -148,11 +152,19 @@ def tune_parameters(dataset_name, X_train, y_train, X_val, y_val):
             tuning_results.append({
                 "dataset": dataset_name,
                 "params": params,
-                "f1": current_score,
-                "accuracy": result["custom"]["accuracy"],
-                "precision": result["custom"]["precision"],
-                "recall": result["custom"]["recall"],
-                "train_time": result["custom"]["train_time"],
+                "test_data": {
+                    "f1": result["custom"]["f1"],
+                    "accuracy": result["custom"]["accuracy"],
+                    "precision": result["custom"]["precision"],
+                    "recall": result["custom"]["recall"],
+                    "train_time": result["custom"]["train_time"],
+                },
+                "train_data": {
+                    "f1": result["custom_train"]["f1"],
+                    "accuracy": result["custom_train"]["accuracy"],
+                    "precision": result["custom_train"]["precision"],
+                    "recall": result["custom_train"]["recall"],
+                },
             })
 
             if current_score > best_score:
