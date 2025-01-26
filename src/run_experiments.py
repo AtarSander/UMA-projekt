@@ -1,5 +1,5 @@
 # Autor: Aleksander Szymczyk, Andrzej Tokajuk
-# Data utworzenia: 26.01.2025
+# Data utworzenia: 17.01.2025
 
 import json
 import os

@@ -1,5 +1,5 @@
 # Autor: Aleksander Szymczyk, Andrzej Tokajuk
-# Data utworzenia: 26.01.2025
+# Data utworzenia: 07.12.2025
 
 from cart_tree import CartTree
 

@@ -1,5 +1,5 @@
 # Autor: Aleksander Szymczyk, Andrzej Tokajuk
-# Data utworzenia: 26.01.2025
+# Data utworzenia: 06.12.2024
 
 class TreeNode:
     def __init__(self, split_condition, left, right, label=None):

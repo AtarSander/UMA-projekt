@@ -1,5 +1,5 @@
 # Autor: Aleksander Szymczyk, Andrzej Tokajuk
-# Data utworzenia: 26.01.2025
+# Data utworzenia: 15.01.2025
 
 import pytest
 import pandas as pd

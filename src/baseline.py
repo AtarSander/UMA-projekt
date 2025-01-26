@@ -1,5 +1,5 @@
 # Autor: Aleksander Szymczyk, Andrzej Tokajuk
-# Data utworzenia: 26.01.2025
+# Data utworzenia: 17.01.2025
 
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
